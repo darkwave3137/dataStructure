@@ -42,6 +42,7 @@ int LocateElem(SqList *L, ElemType e){
 bool ListInsert(SqList *L, int i, ElemType e){
     if(i > L -> length || i < 0) return false;
     L -> data[i - 1] = e;
+    L -> length++;
     return true;
 }
 
@@ -51,5 +52,6 @@ bool ListDelete(SqList *L, int i, ElemType e){
         L -> data[i - 1] = L -> data[i];
         i++;
     }
+    L -> length--;
     return true;
 }
